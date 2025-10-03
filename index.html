@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds Stars - Descubra as espécies de aves!</title>
+    <link rel="stylesheet" href="/static/style/styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Cabeçalho -->
+        <header class="header">
+            <div class="title-container">
+                <h1 class="title">
+                    <span class="birds">Birds</span>
+                    <img src="/static/assets/logo.png" alt="" class="star">
+                    <span class="stars">Stars</span>
+                </h1>
+            </div>
+        </header>
+
+        <!-- Botão de busca -->
+        <div class="search-section">
+            <button class="search-button" id="searchBtn">
+                Descubra as espécies de aves!
+            </button>
+        </div>
+
+        <!-- Grid de cards de pássaros -->
+        <div class="birds-grid" id="birdsGrid">
+            <!-- Cards serão inseridos dinamicamente aqui -->
+            <div class="bird-card placeholder-card">
+                <div class="card-content">
+                    <h3 class="species-name">Espécie</h3>
+                    <p class="location">Localização</p>
+                    <div class="play-button" title="Reproduzir gravação">
+                        <span class="play-icon">▶️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bird-card placeholder-card">
+                <div class="card-content">
+                    <h3 class="species-name">Espécie</h3>
+                    <p class="location">Localização</p>
+                    <div class="play-button" title="Reproduzir gravação">
+                        <span class="play-icon">▶️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bird-card placeholder-card">
+                <div class="card-content">
+                    <h3 class="species-name">Espécie</h3>
+                    <p class="location">Localização</p>
+                    <div class="play-button" title="Reproduzir gravação">
+                        <span class="play-icon">▶️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bird-card placeholder-card">
+                <div class="card-content">
+                    <h3 class="species-name">Espécie</h3>
+                    <p class="location">Localização</p>
+                    <div class="play-button" title="Reproduzir gravação">
+                        <span class="play-icon">▶️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bird-card placeholder-card">
+                <div class="card-content">
+                    <h3 class="species-name">Espécie</h3>
+                    <p class="location">Localização</p>
+                    <div class="play-button" title="Reproduzir gravação">
+                        <span class="play-icon">▶️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bird-card placeholder-card">
+                <div class="card-content">
+                    <h3 class="species-name">Espécie</h3>
+                    <p class="location">Localização</p>
+                    <div class="play-button" title="Reproduzir gravação">
+                        <span class="play-icon">▶️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Buscando espécies de aves...</p>
+        </div>
+
+        <!-- Audio player (oculto) -->
+        <audio id="audioPlayer" preload="none"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

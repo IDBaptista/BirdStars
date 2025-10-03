@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+:root{
+    --Luckiest-Guy: 'Luckiest Guy', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: 
+        url('/static/assets/passaros.png'),
+    linear-gradient(135deg, 
+        #ffc5df 10%, 
+        #e3e8a1 70%
+    );
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.fundo{
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+
+
+.title-container {
+    display: inline-block;
+    position: relative;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+.birds {
+    color: #faf171;
+    font-size: 90px;
+    -webkit-text-stroke: 0.5px #a36b80;
+    font-family: var(--Luckiest-Guy);
+}
+
+.stars {
+    color: #faf171;
+    font-size: 90px;
+    -webkit-text-stroke: 0.5px #a36b80;
+    font-family: var(--Luckiest-Guy);
+}
+
+.star-icon {
+    font-size: 3.5rem;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.1) rotate(10deg); }
+}
+
+/* Seção de busca */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.search-button {
+    background: #a36b80;
+    color: #fff8dc;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.search-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.search-button:active {
+    transform: translateY(-1px);
+}
+
+/* Grid de cards */
+.birds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.bird-card {
+    background: #a36b80;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card-content {
+    text-align: center;
+    color: #fff8dc;
+    width: 100%;
+    position: relative;
+}
+
+.species-name {
+    font-size: 1.5rem;
+    font-family: Opens Sans, sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.location {
+    font-size: 1.1rem;
+    font-family: Opens Sans, sans-serif;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.play-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.play-button:hover {
+    background: #faf171;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.play-icon {
+    font-size: 1rem;
+    color: #a36b80;
+}
+
+/* Placeholder cards styling */
+.placeholder-card .species-name {
+    opacity: 0.7;
+}
+
+.placeholder-card .location {
+    opacity: 0.5;
+}
+
+.placeholder-card .play-button {
+    opacity: 0.6;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #a36b80;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f4d03f;
+    border-top: 6px solid #a36b80;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.loading p {
+    font-size: 1.2rem;
+    font-family: Opens Sans, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+/* Animações */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Estados de reprodução de áudio */
+.bird-card.playing .play-button {
+    background: #4CAF50;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+.bird-card.playing .play-icon {
+    color: white;
+}
+
+.bird-card.loading .play-button {
+    background: #ff9800;
+    animation: pulse 1s infinite;
+}
+
+.bird-card.loading .play-icon {
+    color: white;
+}
+
+.bird-card.error .play-button {
+    background: #f44336;
+    animation: shake 0.5s ease-in-out;
+}
+
+.bird-card.error .play-icon {
+    color: white;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .star-icon {
+        font-size: 2.5rem;
+    }
+    
+    .search-button {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+    
+    .birds-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .bird-card {
+        padding: 25px;
+        min-height: 180px;
+    }
+    
+    .species-name {
+        font-size: 1.3rem;
+    }
+    
+    .location {
+        font-size: 1rem;
+    }
+    
+    .play-button {
+        width: 50px;
+        height: 50px;
+        top: -5px;
+        right: -5px;
+    }
+    
+    .play-icon {
+        font-size: 1.2rem;
+    }
+    
+    .bird {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .star-icon {
+        font-size: 2rem;
+    }
+    
+    .search-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .bird-card {
+        padding: 20px;
+        min-height: 160px;
+    }
+    
+    .species-name {
+        font-size: 1.2rem;
+    }
+    
+    .location {
+        font-size: 0.9rem;
+    }
+    
+    .play-button {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .play-icon {
+        font-size: 1rem;
+    }
+}
+
+/* Efeitos especiais para interação */
+.bird-card.clicked {
+    animation: cardPulse 0.3s ease-in-out;
+}
+
+@keyframes cardPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Estilo para cards com dados reais */
+.bird-card.loaded {
+    background:#a36b80;
+}
+
+
+.bird-card.loaded .play-button {
+    opacity: 1;
+}
